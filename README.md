@@ -1,61 +1,65 @@
-# 💳 Prédiction du Défaut de Paiement des Cartes de Crédit / Credit Card Default Prediction
+# 💳 Prédiction du Défaut de Paiement des Cartes de Crédit  
+# 💳 Credit Card Default Prediction
 
-Ce projet utilise des techniques de Machine Learning pour prédire le défaut de paiement d’un client basé sur des données financières.  
-The goal of this project is to predict credit card default using Machine Learning techniques on real-world data.
+## 📌 Description
+
+Ce projet a pour objectif de prédire si un client va faire défaut sur sa carte de crédit, en utilisant des techniques de machine learning.  
+This project aims to predict whether a credit card client will default, using machine learning techniques.
 
 ---
 
-## 📊 Dataset
+## 📊 Données utilisées | Dataset
 
 - **Source** : [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients)
-- **Nom du fichier** : `default of credit card clients.xls`
-- Le jeu de données contient des informations démographiques et financières de 30 000 clients.
-- The dataset includes demographic and financial features of 30,000 credit card clients.
+- **Fichier** : `default of credit card clients.xls`
+- 30 000 clients avec informations démographiques, comportementales et financières.  
+- 30,000 clients with demographic, behavioral, and financial information.
 
 ---
 
-## 🔍 Étapes du projet / Project Steps
+## 🧠 Étapes du projet | Project Steps
 
-### ✅ 1. Chargement et exploration des données  
-*Loading and exploring data*
-- Chargement depuis l'URL
-- Exploration initiale : `info()`, `describe()`, `value_counts()`, histogrammes
+### 1️⃣ Chargement et exploration des données  
+**Loading and exploring the data**
+- `df.info()`, `df.describe()`, `value_counts()`
+- Visualisations initiales (histogrammes, boxplots)
 
-### 🧹 2. Nettoyage des données  
-*Data cleaning*
-- Gestion des valeurs inconnues (EDUCATION, MARRIAGE)
+### 2️⃣ Nettoyage des données  
+**Data Cleaning**
+- Correction des valeurs incohérentes (`EDUCATION`, `MARRIAGE`)
 - Suppression des doublons
+- Vérification des valeurs manquantes
 
-### 📊 3. Visualisation  
-*Data visualization*
-- Histogrammes, boxplots, countplots
-- Analyse de la distribution des variables
+### 3️⃣ Visualisation  
+**Data Visualization**
+- Histogrammes d'âge et de sexe
+- Boîtes à moustaches (`LIMIT_BAL`, `AGE`)
+- Countplots et heatmaps
 
-### 🤖 4. Préparation des données et Feature Scaling  
-*Data preparation and scaling*
-- Séparation X/y
+### 4️⃣ Préparation des données  
+**Data Preparation**
+- Séparation des variables (X, y)
 - Normalisation avec `StandardScaler`
-- Split en train/test
+- Découpage en train/test (`train_test_split`)
 
-### 🌲 5. Entraînement du modèle  
-*Model training*
-- Utilisation de `RandomForestClassifier`
-- Entraînement sur les données d’entraînement
+### 5️⃣ Entraînement du modèle  
+**Model Training**
+- Modèle : `RandomForestClassifier`
+- Apprentissage sur les données d'entraînement
 
-### 📈 6. Évaluation du modèle  
-*Model evaluation*
-- Rapport de classification (`classification_report`)
-- Matrice de confusion (`confusion_matrix`)
-- Heatmap avec Seaborn
+### 6️⃣ Évaluation du modèle  
+**Model Evaluation**
+- `classification_report`, `confusion_matrix`
+- Matrice de confusion avec Seaborn (heatmap)
 
-### 💾 7. Sauvegarde et chargement du modèle  
-*Model saving and loading*
-- Sauvegarde avec `joblib.dump()`
+### 7️⃣ Sauvegarde et rechargement  
+**Saving and reloading**
+- Sauvegarde du modèle avec `joblib.dump()`
 - Chargement avec `joblib.load()`
 
 ---
 
-## 🛠️ Librairies utilisées / Libraries used
+## ⚙️ Librairies utilisées | Libraries
 
 ```python
-pandas, numpy, matplotlib, seaborn, scikit-learn, imblearn, skorecard
+pandas, numpy, matplotlib, seaborn, scikit-learn, joblib
